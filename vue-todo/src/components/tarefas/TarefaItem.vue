@@ -2,7 +2,7 @@
   <div>
     <v-list-item
       :class="{'blue lighten-4' :tarefa.concluido}"
-      @click="tarefa.concluido = !tarefa.concluido"
+      @click="alteraValorTarefa(tarefa)"
     >
         <template v-slot:default="{}">
             <v-list-item-action>
@@ -38,6 +38,9 @@ export default {
     methods:{
       handleRemoveTarefa(id){
         this.$store.commit('removeTarefa', id)
+      },
+      alteraValorTarefa(tarefa){
+        tarefa.concluido = !tarefa.concluido
       }
     }
 }
