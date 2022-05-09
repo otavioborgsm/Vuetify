@@ -52,14 +52,14 @@
     },
     methods:{
 
-        handleEditar(){
-            let novaTarefa = {
-                titulo: this.titulo,
-                id: this.tarefa.id
-            }
-            this.$store.dispatch('editaTarefa', novaTarefa)
-            this.$emit('fechaModal')
-        }
+      handleEditar(){
+          let novaTarefa = {
+            titulo: this.titulo,
+            id: this.tarefa.id
+          }
+          this.$store.dispatch('editaTarefa', novaTarefa)
+          this.$emit('fechaModal')
+      }
         
     }
   }

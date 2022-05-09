@@ -10,6 +10,22 @@
       v-model="drawer"
       app
     >
+    <v-img
+      src="./assets/bg.jpg"
+      gradient="to top right, rgba(19,84,122,.5), rgba(128,108,199,.8)"
+      dark
+      class="pt-5 text-center"
+    >
+
+      <v-avatar
+        size="100"
+      >
+        <img
+          src="https://avatars.githubusercontent.com/u/62483464?v=4"
+          alt="Otávio"
+        >
+      </v-avatar>
+
       <v-list-item>
         <v-list-item-content>
           <v-list-item-title class="text-h6">
@@ -20,6 +36,9 @@
           </v-list-item-subtitle>
         </v-list-item-content>
       </v-list-item>
+
+    </v-img>
+      
 
       <v-divider></v-divider>
 
@@ -44,16 +63,12 @@
       </v-list>
     </v-navigation-drawer>
 
-    <!-- <v-app-bar app>
-      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
-
-      <v-toolbar-title>Application</v-toolbar-title>
-    </v-app-bar> -->
     <v-app-bar
       app
       color="#fcb69f"
       dark
       prominent
+      height="190"
       src="./assets/bg.jpg"
     >
       <template v-slot:img="{ props }">
@@ -65,21 +80,13 @@
 
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 
-      <v-app-bar-title>Title</v-app-bar-title>
-
-      <v-spacer></v-spacer>
-
-      <v-btn icon>
-        <v-icon>mdi-magnify</v-icon>
-      </v-btn>
-
-      <v-btn icon>
-        <v-icon>mdi-heart</v-icon>
-      </v-btn>
-
-      <v-btn icon>
-        <v-icon>mdi-dots-vertical</v-icon>
-      </v-btn>
+      <center>
+        <v-app-bar-title
+          class="mt-15"
+        >
+          <InputTarefa />
+        </v-app-bar-title>
+      </center>
     </v-app-bar>
 
     <v-main>
@@ -89,7 +96,9 @@
 </template>
 
 <script>
+import InputTarefa from './components/InputTarefa.vue'
   export default {
+  components: { InputTarefa },
     data: () => ({ 
       drawer: null,
       items: [
